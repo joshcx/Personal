@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <title>Risk</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!-- Optional Bootstrap theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+    <!-- Custom styles for this template -->
+    <link href="home.css" rel="stylesheet">
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    
+
+  </head>
+
+  <body>
+
+    <div class="container">
+      <h1>Risk: The Game of Global Domination</h1>
+
+      
+
+      <div class="container" id="buttonContainer">
+        <div class="row" style="height:50px;">
+          <div class="col-md-2">
+            <span class="button" id="playButton"><p>Play</p></span>
+          </div>
+          <div class="col-md-2">
+            <span class="button" id="tutorialButton"><p>Tutorial</p></span>
+          </div>
+          <div class="col-md-2">
+            <span class="button" id="websiteButton"><p>Website</p></span>
+          </div>
+        </div>
+      </div><!--button container-->
+
+      <script>
+
+
+
+        $(document).ready(function() { // callback 1
+          var count = {key: 1};
+        
+          $("#myButton").on('click', function() { // callback 2
+              drawButtonCallback(count);
+              if ((count.key % 3) === 0) {
+                $("#canvas").removeClass('canvas1').addClass('canvas2'); 
+                alert("the house survived 3 blows!");
+              } 
+              (count.key)++;
+          });
+
+
+          function drawButtonCallback(count) {
+              var canvas = document.getElementById('canvas');
+              // Check the element is in the DOM and the browser supports canvas
+              if(canvas.getContext) {
+              
+                  // Initaliase a 2-dimensional drawing context
+                  var context = canvas.getContext('2d');
+                  //Canvas commands go here
+                  context.fillStyle = "black";
+                  context.fillRect(10, 120, 200, 100);
+                  if ((count.key % 2) === 0) {
+                      context.fillStyle = "red";
+                  }
+                  else {
+                      context.fillStyle = "blue";
+                  }
+                  context.fillRect(10, 120, 100, 100);
+                  context.fillRect(110, 120, 100, 50);
+                  context.fillRect(140, 170, 70, 50);
+
+                  context.beginPath();
+                  context.moveTo(210,220);
+                  context.lineTo(230,100);
+                  context.lineTo(120,70);
+                  context.fill();
+
+                  if ((count.key % 2) === 0) {
+                      context.fillStyle = "blue";
+                  }
+                  else {
+                      context.fillStyle = "red";
+                  }
+                  context.beginPath();
+                  context.moveTo(10,120);
+                  context.lineTo(210,120);
+                  context.lineTo(120,70);
+                  context.fill();
+
+                  context.beginPath();
+                  context.moveTo(210,220);
+                  context.lineTo(230,200);
+                  context.lineTo(230,100);
+                  context.lineTo(210,120);
+                  context.fill();           
+              }
+          }
+
+
+        });
+        
+      </script>
+    </div> <!-- /container -->
+
+  </body>
+</html>
