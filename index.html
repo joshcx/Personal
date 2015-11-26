@@ -6,16 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-    <title>Risk</title>
+    <title>Joshua Tan</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <!-- Optional Bootstrap theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    
     <!-- Custom styles for this template -->
-    <link href="index.css" rel="stylesheet">
-
+    <link href="gridstack.css" rel="stylesheet">
+    <link href="gridstack-extra.css" rel="stylesheet">
+    <link href="userPic.css" rel="stylesheet">
+    <link href="background.css" rel="stylesheet">
     <!-- Bootstrap core JavaScript-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     
@@ -27,94 +31,56 @@
 
   <body>
 
-    <div class="container">
-      <h1>Risk: The Game of Global Domination</h1>
+    <section id="demo" class="darklue">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Home</h2>
+                    <hr class="star-light">
+                </div>
+            </div>
 
-      
-
-      <div class="container" id="buttonContainer">
-        <div class="row" style="height:50px;">
-          <div class="col-md-2">
-            <span class="button" id="playButton"><p>Play</p></span>
-          </div>
-          <div class="col-md-2">
-            <span class="button" id="tutorialButton"><p>Tutorial</p></span>
-          </div>
-          <div class="col-md-2">
-            <span class="button" id="websiteButton"><p>Website</p></span>
-          </div>
+            <div class="grid-stack" data-gs-width="12" data-gs-animate="yes">
+                <div class="grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="2" data-gs-height="2"><div class="grid-stack-item-content">Economics & Finance</div></div>
+                <div class="grid-stack-item" data-gs-x="4" data-gs-y="0" data-gs-width="8" data-gs-height="2"><div class="grid-stack-item-content">
+                    <div class="card hovercard">
+                        <div class="card-background">
+                            <img class="card-bkimg" alt="" src="https://cdn.shopify.com/s/files/1/0153/0623/products/Knightsbridge_Flock_Wallpaper_in_Taupe_design_by_Kelly_Hoppen_for_Graham_Brown_9d4476d9-44af-4942-8e6f-2df3b9da67fd_small.jpg?v=1430170284">
+                        </div>
+                        <div class="useravatar">
+                            <img alt="" src="https://scontent-ord1-1.xx.fbcdn.net/hphotos-xfa1/v/t1.0-9/12249634_10153824409130802_6213058848011578478_n.jpg?oh=c698a4ee651bc5a39e85b773f162162f&oe=56DCFE12">
+                        </div>
+                        <div class="card-info"> <span class="card-title">Joshua Tan</span>
+                        </div>
+                    </div>
+                </div></div>
+                <div class="grid-stack-item" data-gs-x="10" data-gs-y="2" data-gs-width="2" data-gs-height="4"><div class="grid-stack-item-content">Contact Me</div></div>
+                <div class="grid-stack-item" data-gs-x="0" data-gs-y="2" data-gs-width="2" data-gs-height="2"><div class="grid-stack-item-content">Computer Science & Tech</div></div>
+                <div class="grid-stack-item" data-gs-x="2" data-gs-y="2" data-gs-width="2" data-gs-height="4"><div class="grid-stack-item-content">Social Justice</div></div>
+                <div class="grid-stack-item" data-gs-x="0" data-gs-y="4" data-gs-width="4" data-gs-height="2"><div class="grid-stack-item-content">Travel & GoPro</div></div>
+                <div class="grid-stack-item" data-gs-x="4" data-gs-y="4" data-gs-width="6" data-gs-height="4"><div class="grid-stack-item-content">About Me</div></div>
+            </div>
         </div>
-      </div><!--button container-->
+    </section>
+    
 
-      <script>
+    
 
-
-
-        $(document).ready(function() { // callback 1
-          var count = {key: 1};
-        
-          $("#myButton").on('click', function() { // callback 2
-              drawButtonCallback(count);
-              if ((count.key % 3) === 0) {
-                $("#canvas").removeClass('canvas1').addClass('canvas2'); 
-                alert("the house survived 3 blows!");
-              } 
-              (count.key)++;
-          });
-
-
-          function drawButtonCallback(count) {
-              var canvas = document.getElementById('canvas');
-              // Check the element is in the DOM and the browser supports canvas
-              if(canvas.getContext) {
-              
-                  // Initaliase a 2-dimensional drawing context
-                  var context = canvas.getContext('2d');
-                  //Canvas commands go here
-                  context.fillStyle = "black";
-                  context.fillRect(10, 120, 200, 100);
-                  if ((count.key % 2) === 0) {
-                      context.fillStyle = "red";
-                  }
-                  else {
-                      context.fillStyle = "blue";
-                  }
-                  context.fillRect(10, 120, 100, 100);
-                  context.fillRect(110, 120, 100, 50);
-                  context.fillRect(140, 170, 70, 50);
-
-                  context.beginPath();
-                  context.moveTo(210,220);
-                  context.lineTo(230,100);
-                  context.lineTo(120,70);
-                  context.fill();
-
-                  if ((count.key % 2) === 0) {
-                      context.fillStyle = "blue";
-                  }
-                  else {
-                      context.fillStyle = "red";
-                  }
-                  context.beginPath();
-                  context.moveTo(10,120);
-                  context.lineTo(210,120);
-                  context.lineTo(120,70);
-                  context.fill();
-
-                  context.beginPath();
-                  context.moveTo(210,220);
-                  context.lineTo(230,200);
-                  context.lineTo(230,100);
-                  context.lineTo(210,120);
-                  context.fill();           
-              }
-          }
-
-
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.2/masonry.pkgd.min.js"></script>
+    <script src="gridstack.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var options = {
+                static_grid : true
+                //vertical_margin: 10
+            };
+            $('.grid-stack').gridstack(options);
         });
-        
-      </script>
-    </div> <!-- /container -->
-
+</script>
   </body>
 </html>
