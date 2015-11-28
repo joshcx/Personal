@@ -111,24 +111,29 @@
 						<div class="inner">
 							<h2 class="major">Contact Me</h2>
 							<p>I will get back to you as soon as possible.</p>
-							<form method="post" action="http://formspree.io/joshcx.tan@gmail.com">
-								<div class="field">
-									<label for="name">Name</label>
-									<input type="text" name="name" id="name" />
-								</div>
-								<div class="field">
-									<label for="email">Email</label>
-									<input type="email" name="_replyto" id="email" />
-								</div>
-								<div class="field">
-									<label for="message">Message</label>
-									<textarea name="body" id="message" rows="4"></textarea>
-								</div>
-							</br>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</form>
+							<section id="footerForm">
+									<form id="contactform" method="post">
+										<div class="row uniform">
+											<div class="6u 12u$(xsmall)">
+												<input type="text" name="name" id="name" value="" placeholder="Name" />
+											</div>
+											<div class="6u$ 12u$(xsmall)">
+												<input type="email" name="_replyto" id="email" value="" placeholder="Email" />
+											</div>
+											<input type="hidden" name="_subject" value="Website contact" />
+											<input type="text" name="_gotcha" style="display:none" />
+											<input type="hidden" name="_next" value="//site.io/thanks.html" />
+											<div class="12u$">
+												<textarea name="message" id="message" placeholder="Enter your message" rows="6"></textarea>
+											</div>
+											<div class="12u$">
+												<ul class="actions">
+													<li><input type="submit" value="Send Message"/></li>
+												</ul>
+											</div>
+										</div>
+									</form>
+								</section>
 						<ul class="icons">
 							<li><a href="https://www.facebook.com/josh.cx" class="icon fa-facebook" target="_blank"><span class="label">Facebook</span></a></li>
 						</ul>
@@ -147,6 +152,11 @@
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
+			<script>
+    		// for contact form added security - wrap email in javascript
+    		var contactform =  document.getElementById('contactform');
+    		contactform.setAttribute('action', '//formspree.io/' + 'joshcx.tan' + '@' + 'gmail' + '.' + 'com');
+			</script>
 
 	</body>
 </html>
