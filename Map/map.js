@@ -15,7 +15,7 @@ var Map = function Map(view) {
 	var mapOptions = {
 		// feel free to edit map options
 		disableDefaultUI: true,
-		zoom: 1,
+		zoom: 2,
 		center: new google.maps.LatLng(0, 0),
 		mapTypeId: google.maps.MapTypeId.ROADMAP
 	}
