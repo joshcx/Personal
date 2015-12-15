@@ -1,0 +1,2 @@
+1. Inconsistent troops number for p1 and p2
+2. 
